@@ -23,6 +23,8 @@ def _main():
 
 	try:
 		for line in lines_iterator:
+			if not line.strip():
+			    continue	
 			if line:
 				print(line,end="")
 				sys.stdout.flush()
@@ -30,7 +32,7 @@ def _main():
 				notification.show()
 			else:
 				break
-			time.sleep(5)
+			time.sleep(3)
 	except KeyboardInterrupt:
 		sys.exit(0)
 
